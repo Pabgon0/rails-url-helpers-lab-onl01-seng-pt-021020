@@ -1,6 +1,5 @@
-  def activate
-    @student = Student.find(params[:id])
-    @student.active = !@student.active 
-    @student.save
-    redirect_to student_path(@student)
+class AddActiveStudents < ActiveRecord::Migration
+  def change
+      add_column :students, :active, :boolean, :default => false
   end
+end
